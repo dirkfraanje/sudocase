@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuDoCase.MainPage"
+             xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="2,2,2,10">
+            <Button x:Name="resetButton" Text="Reset" Clicked="ResetButton_Clicked"/>
+            <Button x:Name="prefillButton" Text="Prefill" Clicked="Prefill_Clicked"/>
+            <Label Text="SuDoCase" FontSize="Large" FontAttributes="Bold" x:Name="appLabel" HorizontalOptions="CenterAndExpand" Margin="5"/>
+            <Button x:Name="SolveButton" Text="Solve" Clicked="StartResolve" IsVisible="true"/>
+        </StackLayout>
+        <Label x:Name="SolvedLabel" FontSize="Medium" TextColor="Black" IsVisible="false" Margin="2,2,2,5"/>
+        <Grid x:Name="row1" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid x:Name="row2" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid x:Name="row3" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <controls:MTAdView x:Name="myAds" 
+                           IsVisible="true" 
+                           PersonalizedAds="true" 
+                           AdsId="ca-app-pub-3776367793414788/5470124381" 
+                           VerticalOptions="EndAndExpand" >
+            <controls:MTAdView.HeightRequest>
+                <x:OnIdiom>
+                    <x:OnIdiom.Phone>50</x:OnIdiom.Phone>
+                    <x:OnIdiom.Tablet>90</x:OnIdiom.Tablet>
+                    <x:OnIdiom.Desktop>90</x:OnIdiom.Desktop>
+                </x:OnIdiom>
+            </controls:MTAdView.HeightRequest>
+        </controls:MTAdView>
+    </StackLayout>
+
+</ContentPage>
